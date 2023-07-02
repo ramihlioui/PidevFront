@@ -51,7 +51,7 @@
               <small> Or sign in with credentials </small>
             </div>
 
-            <form (submit)="login()" role="form">
+            <form (ngSubmit)="login()" role="ngForm">
               <div
                 class="form-group mb-3"
                 [ngClass]="{ focused: focus === true }"
@@ -69,6 +69,7 @@
                     (focus)="focus = true"
                     (blur)="focus = false"
                     [(ngModel)]="email"
+                    name="email"
                   />
                 </div>
               </div>
@@ -86,17 +87,12 @@
                     (focus)="focus1 = true"
                     (blur)="focus1 = false"
                     [(ngModel)]="password"
+                    name="password"
                   />
                 </div>
               </div>
-              <div
-                class="custom-control custom-control-alternative custom-checkbox"
-              >
-                
-               
-              </div>
               <div class="text-center">
-                <button  type="submit" class="btn btn-primary my-4">
+                <button type="submit" class="btn btn-primary my-4" >
                   Sign in
                 </button>
               </div>

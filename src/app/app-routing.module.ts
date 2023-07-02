@@ -7,8 +7,10 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
 import { PresentationComponent } from "./pages/presentation/presentation.component";
 import {HomeComponent} from "./pages/home/home.component";
+import { LoginComponent } from "./pages/examples/login/login.component";
 
 const routes: Routes = [
+ 
   {
     path: "",
     redirectTo: "presentation",
@@ -18,6 +20,7 @@ const routes: Routes = [
     path: "presentation",
     component: PresentationComponent
   },
+  
   {
     path: "",
     component: AdminLayoutComponent,

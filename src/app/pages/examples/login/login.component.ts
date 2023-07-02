@@ -11,11 +11,17 @@ export class LoginComponent implements OnInit {
   focus1;
   email: string;
   password: string;
-  constructor(public auth : AuthServiceService,private router: Router) {}
+  constructor(
+    private auth: AuthServiceService, 
+    private router: Router,
+    ) {}
 
   ngOnInit() {}
 
   login(): void {
+    console.log(this.email)
+    console.log(this.password)
+
     this.auth.login(this.email, this.password);
   }
 }

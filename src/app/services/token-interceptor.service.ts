@@ -12,14 +12,16 @@ export class TokenInterceptor implements HttpInterceptor {
     // Get the token from wherever you have stored it (e.g., local storage)
     const token = localStorage.getItem('token');
 
+    if (request.headers.has('Content-Type'))
     // Clone the request and add the token to the headers
-    const modifiedRequest = request.clone({
+    request = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': "application/json"
       }
     });
 
     // Pass the modified request to the next interceptor or to the backend server
-    return next.handle(modifiedRequest);
+    return next.handle(request);
   }
 }

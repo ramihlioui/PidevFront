@@ -6,14 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class AuthServiceService {
 
-  private apiUrl = 'http://localhost:8080/auth';
-
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string): void {
-    const loginData = { username, password };
-
-     this.http.post<any>("http://localhost:8080/auth/authenticate", loginData).subscribe(
+  login(email: string, password: string): void {
+    const body = { email, password };
+    console.log("body  :",body)
+     this.http.post<any>("http://localhost:8080/auth/authenticate", body).subscribe(
       response => {
         localStorage.setItem('token', response.token);
         console.log(response.token)

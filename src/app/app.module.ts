@@ -18,6 +18,7 @@ import { ComponentsModule } from "./components/components.module";
 
 import { AppRoutingModule } from './app-routing.module';
 import { TokenInterceptor } from "./services/token-interceptor.service";
+import { LoginComponent } from "./pages/examples/login/login.component";
 
 @NgModule({
   declarations: [
