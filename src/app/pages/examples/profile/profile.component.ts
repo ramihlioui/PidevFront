@@ -1,11 +1,28 @@
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "src/app/services/user.service";
+import { User } from "../model/UserModel";
 
 @Component({
   selector: "app-profile",
   templateUrl: "profile.component.html"
 })
 export class ProfileComponent implements OnInit {
-  constructor() {}
+  constructor( private userService: UserService) {}
+  user: User
+  ngOnInit() {
+    this.getUserById()
+  }
 
-  ngOnInit() {}
+  getUserById(){
+    const userId = 4; // Replace with the desired user ID
+    this.userService.getUserById(userId).subscribe(
+      user => {
+        this.user = user;
+        console.log(user)
+      },
+      error => {
+        console.log('Error occurred while fetching user:', error);
+      }
+    );
+  }
 }
