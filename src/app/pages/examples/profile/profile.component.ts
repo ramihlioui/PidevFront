@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserById(){
-    const userId = 4; // Replace with the desired user ID
+    const userId = 5; // Replace with the desired user ID
     this.userService.getUserById(userId).subscribe(
       user => {
         this.user = user;

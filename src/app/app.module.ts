@@ -19,12 +19,14 @@ import { ComponentsModule } from "./components/components.module";
 import { AppRoutingModule } from './app-routing.module';
 import { TokenInterceptor } from "./services/token-interceptor.service";
 import { LoginComponent } from "./pages/examples/login/login.component";
+import { ResetPasswordComponent } from './pages/resetpassword/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserAnimationsModule,

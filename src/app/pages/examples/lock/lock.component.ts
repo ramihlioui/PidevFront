@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthServiceService } from "src/app/services/auth-service.service";
 
 @Component({
   selector: "app-lock",
@@ -6,7 +7,15 @@ import { Component, OnInit } from "@angular/core";
 })
 export class LockComponent implements OnInit {
   focus2;
-  constructor() {}
+  email:string;
+  constructor(private auth : AuthServiceService) {}
 
   ngOnInit() {}
+  
+  forgotPassword(): void {
+    console.log(this.email)
+
+
+    this.auth.forgotPassword(this.email)
+  }
 }

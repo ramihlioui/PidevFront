@@ -5,6 +5,7 @@ import { PricingComponent } from "../../pages/examples/pricing/pricing.component
 import { LockComponent } from "../../pages/examples/lock/lock.component";
 import { RegisterComponent } from "../../pages/examples/register/register.component";
 import { PresentationComponent } from "../../pages/presentation/presentation.component";
+import { ResetPasswordComponent } from "src/app/pages/resetpassword/reset-password/reset-password.component";
 
 export const AuthLayoutRoutes: Routes = [
   {
@@ -22,6 +23,15 @@ export const AuthLayoutRoutes: Routes = [
       {
         path: "lock",
         component: LockComponent
+      }
+    ]
+  },
+  {
+    path: "",
+    children: [
+      {
+        path: "reset-password",
+        component: ResetPasswordComponent
       }
     ]
   },
